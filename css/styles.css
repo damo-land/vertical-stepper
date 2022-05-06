@@ -1,0 +1,113 @@
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	padding: 12%;
+	min-height: 100%;
+	background-color: #f8fafc;
+}
+
+.card {
+	position: relative;
+	box-shadow: 0px 1px 4px rgba(50, 52, 56, 0.12);
+	padding: 16px;
+	border: none;
+	overflow: hidden;
+	transition: 0.16s ease-in-out;
+	-webkit-transition: 0.24s ease-in-out;
+	-moz-transition: 0.16s ease-in-out;
+	-ms-transition: 0.16s ease-in-out;
+	-o-transition: 0.16s ease-in-out;
+}
+
+.step {
+	padding: 0 24px 4px 64px;
+	position: relative;
+	transition: all 0.48s ease-in-out;
+	-webkit-transition: all 0.48s ease-in-out;
+	-moz-transition: all 0.48s ease-in-out;
+	-ms-transition: all 0.48s ease-in-out;
+	-o-transition: all 0.48s ease-in-out;
+}
+
+.step::before {
+	content: attr(data-content);
+	text-align: center;
+	font-size: 1.12em;
+	padding-top: 3px;
+	color: #fff;
+	position: absolute;
+	height: 36px;
+	width: 36px;
+	background-color: #658b34;
+	left: calc(50px / 2);
+	transform: translateX(-45%);
+	z-index: 2;
+	border-radius: 18px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	-ms-border-radius: 18px;
+	-o-border-radius: 18px;
+}
+
+.step-done::before {
+	content: "✓" !important;
+	background-color: #658b34 !important;
+}
+
+.step::after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 1px;
+	background-color: #b1b4b3;
+	left: calc(50px / 2);
+	top: 0;
+	z-index: 1;
+}
+
+.step:last-child:after {
+	width: 0px;
+}
+
+.step.minimized {
+	cursor: pointer;
+}
+
+.step.minimized::before {
+	background-color: #b1b4b3;
+}
+
+.step-header {
+	padding-top: 6px;
+	user-select: none;
+	font-size: 1.08em;
+	font-weight: 600;
+	color: #000;
+}
+
+.step-content {
+	transition: all 0.64s ease-in-out;
+	-webkit-transition: all 0.64s ease-in-out;
+	-moz-transition: all 0.64s ease-in-out;
+	-ms-transition: all 0.64s ease-in-out;
+	-o-transition: all 0.64s ease-in-out;
+	overflow: hidden;
+	position: relative;
+	max-height: 1600px;
+	height: auto;
+	width: 100%;
+	margin-top: 24px;
+}
+
+.step.minimized > .step-content {
+	max-height: 0px;
+}
