@@ -18,6 +18,7 @@ body {
 .card {
 	position: relative;
 	box-shadow: 0px 1px 4px rgba(50, 52, 56, 0.12);
+	background-color: white;
 	padding: 16px;
 	border: none;
 	overflow: hidden;
